@@ -60,11 +60,10 @@ int main()
             {
                         diff=abs(queue[j+1]-queue[j]);
                         seek+=diff;
-                        printf("Disk head moves from %d to %d with seek                                                                                       %d\n",queue[j],queue[j+1],diff);
+                        printf("%d->",queue[j]);     
             }
-            printf("Total seek time is %d\n",seek);
+            printf("\nTotal seek time is %d\n",seek);
             avg=seek/(float)n;
             printf("Average seek time is %f\n",avg);
             return 0;
 }
-

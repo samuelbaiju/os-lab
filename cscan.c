@@ -9,7 +9,7 @@ printf("enter the initial head position");
 scanf("%d",&head);
 printf("enter the size of queue request");
 scanf("%d",&n);
-int queue[n+2],queue1[n+2],queue2[n+2];
+int queue[n+3],queue1[n+3],queue2[n+3];
 printf("enter the queue of disk positions to be read\n");
 for(i=1;i<=n;i++)
 {
@@ -53,15 +53,16 @@ queue[0]=head;
 for(i=1,j=0;j<temp1;i++,j++)
 	queue[i]=queue1[j];
 queue[i]=max;
-for(i=temp1+2,j=0;j<temp2;i++,j++)
+queue[i+1]=0;
+for(i=temp1+3,j=0;j<temp2;i++,j++)
 	queue[i]=queue2[j];
-for(i=0;i<=n+1;i++)
+for(i=0;i<=n+2;i++)
 {
 	diff=abs(queue[i+1]-queue[i]);
 	seektime+=diff;
 	printf("%d->",queue[i]);
 }
-printf("%d",queue[n+1]);
+printf("%d",queue[n+2]);
 printf("\n total seek time=%d",seektime);
 printf("\naverage seek time=%f",seektime/(float)n);
 }

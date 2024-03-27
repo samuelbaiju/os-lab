@@ -24,7 +24,7 @@ void main()
  x[i]=b[i];
 
   b[9]=9999;
- //printf("time => process number");
+
  for(time=0;count!=n;time++)
  {
    smallest=9;
@@ -34,7 +34,6 @@ void main()
    smallest=i;
   }
   b[smallest]--;
-  //printf("\n%d => p%d",time+1,smallest);
   if(b[smallest]==0)
   {
    count++;
@@ -42,7 +41,7 @@ void main()
    completion[smallest] = end;
    waiting[smallest] = end - a[smallest] - x[smallest];
    turnaround[smallest] = end - a[smallest];
-   // printf("\n %d  %d   %d",smallest,wt[smallest],ttp[smallest]);
+  
   }
  }
  printf("pid \t burst \t arrival \twaiting \tturnaround \tcompletion");

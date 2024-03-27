@@ -41,7 +41,7 @@ int main()
             {
                         for(j=i+1;j<temp2;j++)
                         {
-                                    if(queue2[i]<queue2[j])
+                                    if(queue2[i]>queue2[j])
                                     {
                                                 temp=queue2[i];
                                                 queue2[i]=queue2[j];
@@ -52,19 +52,18 @@ int main()
             for(i=1,j=0;j<temp1;i++,j++)
             queue[i]=queue1[j];
             queue[i]=max;
-            for(i=temp1+2,j=0;j<temp2;i++,j++)
+            queue[i+1]=0;
+            for(i=temp1+3,j=0;j<temp2;i++,j++)
             queue[i]=queue2[j];
-            queue[i]=0;
             queue[0]=head;
             for(j=0;j<=n+1;j++)
             {
                         diff=abs(queue[j+1]-queue[j]);
                         seek+=diff;
-                        printf("Disk head moves from %d to %d with seek                                                                                       %d\n",queue[j],queue[j+1],diff);
+                  printf("Disk head moves from %d to %d with seek %d\n",queue[j],queue[j+1],diff);
             }
             printf("Total seek time is %d\n",seek);
             avg=seek/(float)n;
             printf("Average seek time is %f\n",avg);
             return 0;
 }
-
